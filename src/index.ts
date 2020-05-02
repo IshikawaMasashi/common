@@ -1,4 +1,5 @@
-﻿export * as types from './base/common/types';
+﻿export * as arrays from './base/common/arrays';
+export * as types from './base/common/types';
 
 export { generateUuid } from './base/common/uuid';
 
