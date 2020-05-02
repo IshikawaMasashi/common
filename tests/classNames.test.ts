@@ -33,14 +33,15 @@ describe('classNames', () => {
     expect(result).toEqual('');
   });
 
-  //   it('supports an array of class names', function () {
-  //     assert.equal(classNames(['a', 'b']), 'a b');
-  //   });
+  it('supports an array of class names', () => {
+    const result = classNames(['a', 'b']);
+    expect(result).toEqual('a b');
+  });
 
-  //   it('joins array arguments with string arguments', function () {
-  //     assert.equal(classNames(['a', 'b'], 'c'), 'a b c');
-  //     assert.equal(classNames('c', ['a', 'b']), 'c a b');
-  //   });
+  it('joins array arguments with string arguments', () => {
+    expect(classNames(['a', 'b'], 'c')).toEqual('a b c');
+    expect(classNames('c', ['a', 'b'])).toEqual('c a b');
+  });
 
   //   it('handles multiple array arguments', function () {
   //     assert.equal(classNames(['a', 'b'], ['c', 'd']), 'a b c d');
