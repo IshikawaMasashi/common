@@ -1,4 +1,4 @@
-// @charset "UTF-8";
+@charset "UTF-8";
 
 // @import "menu";
 
@@ -10,4 +10,8 @@
 // @import "animations/fade";
 // @import "animations/flip";
 
-// @import "console";
+@import 'backgrounds/background-color.scss';
+
+@import 'layout/display';
+
+@import 'spacing/padding';

@@ -52,23 +52,23 @@ describe('Types', () => {
     ).toBeTruthy();
   });
 
-  //   test('isObject', () => {
-  //     assert(!types.isObject(undefined));
-  //     assert(!types.isObject(null));
-  //     assert(!types.isObject('foo'));
-  //     assert(!types.isObject(5));
-  //     assert(!types.isObject(true));
-  //     assert(!types.isObject([]));
-  //     assert(!types.isObject([1, 2, '3']));
-  //     assert(!types.isObject(/test/));
-  //     assert(!types.isObject(new RegExp('')));
-  //     assert(!types.isFunction(new Date()));
-  //     assert(!types.isObject(assert));
-  //     assert(!types.isObject(function foo() {}));
+  test('isObject', () => {
+    expect(!types.isObject(undefined)).toBeTruthy();
+    expect(!types.isObject(null)).toBeTruthy();
+    expect(!types.isObject('foo')).toBeTruthy();
+    expect(!types.isObject(5)).toBeTruthy();
+    expect(!types.isObject(true)).toBeTruthy();
+    expect(!types.isObject([])).toBeTruthy();
+    expect(!types.isObject([1, 2, '3'])).toBeTruthy();
+    expect(!types.isObject(/test/)).toBeTruthy();
+    expect(!types.isObject(new RegExp(''))).toBeTruthy();
+    expect(!types.isFunction(new Date())).toBeTruthy();
+    // expect(!types.isObject(assert)).toBeTruthy();
+    expect(!types.isObject(function foo() {})).toBeTruthy();
 
-  //     assert(types.isObject({}));
-  //     assert(types.isObject({ foo: 'bar' }));
-  //   });
+    expect(types.isObject({})).toBeTruthy();
+    expect(types.isObject({ foo: 'bar' })).toBeTruthy();
+  });
 
   //   test('isEmptyObject', () => {
   //     assert(!types.isEmptyObject(undefined));
