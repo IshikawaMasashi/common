@@ -10,8 +10,17 @@
 // @import "animations/fade";
 // @import "animations/flip";
 
-@import 'backgrounds/background-color.scss';
+@import 'color';
+
+@import 'backgrounds/background-color';
 
 @import 'layout/display';
 
 @import 'spacing/padding';
+
+@import 'flexbox/align-items';
+@import 'flexbox/justify-content';
+
+@import 'sizing/width';
+@import 'sizing/height';
+

@@ -100,24 +100,30 @@ describe('classNames', () => {
     );
   });
 
-  // it('handles toString() method defined on object', () => {
-  //   expect(
-  //     classNames({
-  //       toString: function () {
-  //         return 'classFromMethod';
-  //       },
-  //     })
-  //   ).toEqual('classFromMethod');
-  // });
+  it('handles toString() method defined on object', () => {
+    expect(
+      classNames({
+        toString: function () {
+          return 'classFromMethod';
+        },
+      })
+    ).toEqual('classFromMethod');
+  });
 
-  // it('handles toString() method defined inherited in object', () => {
-  //   const Class1 = function () {};
-  //   const Class2 = function () {};
-  //   Class1.prototype.toString = function () {
-  //     return 'classFromMethod';
-  //   };
-  //   Class2.prototype = Object.create(Class1.prototype);
+  it('handles toString() method defined inherited in object', () => {
+    // const Class1 = function () {};
+    // const Class2 = function () {};
+    class Class1 {
+      toString() {
+        return 'classFromMethod';
+      }
+    }
+    class Class2 extends Class1 {}
+    // Class1.prototype.toString = function () {
+    //   return 'classFromMethod';
+    // };
+    // Class2.prototype = Object.create(Class1.prototype);
 
-  //   expect(classNames(new Class2())).toEqual('classFromMethod');
-  // });
+    expect(classNames(new Class2())).toEqual('classFromMethod');
+  });
 });

@@ -55,9 +55,18 @@ export default function classNames(...args: ClassValue[]): string {
       }
       // } else if (argType === 'object') {
     } else if (isObject(arg)) {
-      for (const key in arg) {
-        if (hasOwn.call(arg, key) && arg[key]) {
-          classes.push(key);
+      // for (const key in arg) {
+      //   if (hasOwn.call(arg, key) && arg[key]) {
+      //     classes.push(key);
+      //   }
+      // }
+      if (arg.toString !== Object.prototype.toString) {
+        classes.push(arg.toString());
+      } else {
+        for (const key in arg) {
+          if (hasOwn.call(arg, key) && arg[key]) {
+            classes.push(key);
+          }
         }
       }
     }
